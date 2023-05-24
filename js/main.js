@@ -55,7 +55,7 @@ class Viewer {
 
             if (this.model) {
                 this.model.position = new PIXI.Point((width * 0.5), (height * 0.5));
-                this.model.scale = new PIXI.Point((this.model.position.x * 0.06), (this.model.position.x * 0.06));
+                this.model.scale = new PIXI.Point((this.model.position.x * 0.1), (this.model.position.x * 0.1));
                 this.model.masks.resize(this.app.view.width, this.app.view.height);
             }
             var screen_height = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
@@ -86,16 +86,16 @@ class Viewer {
                 return;
             }
 
-            if (this.isClick) {
-                if (this.isHit('TouchHead', event.offsetX, event.offsetY)) {
-                    this.startAnimation("touch_head", "base");
-                } else if (this.isHit('TouchSpecial', event.offsetX, event.offsetY)) {
-                    this.startAnimation("touch_special", "base");
-                } else {
-                    const bodyMotions = ["touch_body", "main_1", "main_2", "main_3"];
-                    let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
-                    this.startAnimation(currentMotion, "base");
-                }
+            //if (this.isClick) {
+              //  if (this.isHit('TouchHead', event.offsetX, event.offsetY)) {
+               //     this.startAnimation("touch_head", "base");
+                //} else if (this.isHit('TouchSpecial', event.offsetX, event.offsetY)) {
+                 //   this.startAnimation("touch_special", "base");
+                //} else {
+                 //   const bodyMotions = ["touch_body", "main_1", "main_2", "main_3"];
+                  //  let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
+                   // this.startAnimation(currentMotion, "base");
+               // }
             }
 
             this.isClick = false;
@@ -112,7 +112,7 @@ class Viewer {
                 let btn = document.createElement("button");
                 let label = document.createTextNode(key);
                 btn.appendChild(label);
-                btn.className = "btnGenericText";
+                btn.className = "selectbutton";
                 btn.addEventListener("click", () => {
                     this.startAnimation(key, "base");
                 });
@@ -244,64 +244,12 @@ class Viewer {
 
         return ((left <= tx) && (tx <= right) && (top <= ty) && (ty <= bottom));
     }
-}
-
-function onChangeLog(){
-    $(document.body).append($("<div></div>")
-        .attr("id","darken")
-        .addClass("darken")
-        .css("top", window.pageYOffset + "px")
-        .click(function(){
-            $('#selector').remove();
-            $('#darken').remove();
-            $(document.body).css("overflow", "auto");
-        }))
-    .append($("<div></div>")
-        .attr("id","selector")
-        .addClass("selector")
-        .css("top", (window.pageYOffset + (window.innerHeight * 0.05)) + "px")
-        .css("padding", "2%"))
-    .css("overflow", "hidden");
-    $("#selector").append($("<table></table>")
-        .addClass("wikitable")
-        .append($("<tr></tr>")
-            .append($("<td></td>")
-                .css("background-color", "#24252D")
-                .css("height", "30px")
-                .css("padding-left", "8px")
-                .html("<b>Changelog</b>")
-            )
-        )
-        .append($("<tr></tr>")
-            .append($("<td></td>")
-                .attr("id", "chglog")
-                .css("padding", "15px")
-                .css("vertical-align","text-top")
-            )
-        )
-    )
-
-    var cb = function (response){
-        for (i in response){
-            var message = response[i].commit.message;
-            var date = response[i].commit.committer.date;
-            date = date.replace("T", " ");
-            date = date.replace("Z", " UTC");
-
-            $("#chglog").append($("<p></p>")
-                .css("line-height", "0.8")
-                .html(message+"<br>")
-                .append($("<font></font>")
-                    .css("font-size", "10px")
-                    .css("color", "gray")
-                    .html(date)
-                )
-            );
+}    
         }
     }
 
     var xobj = new XMLHttpRequest();
-    xobj.open("GET", "https://api.github.com/repos/alg-wiki/AzurLaneL2DViewer/commits?sha=gh-pages", true);
+    xobj.open("GET", "https://api.github.com/repos/Darklydivergent/mhykviewer/commits?sha=gh-pages", true);
     xobj.setRequestHeader("Authorization", "token c44bb04d2275b3c1849b49f02d8c1b473c5b6864");
     //access token scope: <<no scope>>
     //Grants read-only access to public information (includes public user profile info, public repository info, and gists)
