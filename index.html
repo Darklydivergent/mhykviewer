@@ -10,14 +10,14 @@
     <meta name="theme-color" content="#ffffff">
 
     <style>
-        .btnGenericText {
+        .selectbutton {
             white-space: nowrap;
             height: 30px;
             text-align: center;
             vertical-align: middle;
             display: table-cell;
-            background-color: #F299D3;
-            border: 1px solid #D9B166;
+            background-color: #FCE3F4;
+            border: 2px solid #F299D3;
             border-radius: 10px;
             cursor: pointer;
             padding: 0px 7px 0px 7px;
@@ -26,13 +26,13 @@
             margin-bottom: 5px;
             margin-left: 5px;
         }
-        .btnGenericText:hover {
+        .selectbutton:hover {
            background-color: #BDDEF2;
            color: black;
         }
-        .btnGenericText:active {
+        .selectbutton:active {
             background-color: #82C6EF;
-             color: #FCFCFB;
+            border: 2px solid #F299D3;
         }
         .darken {
             height: 100%;
@@ -95,14 +95,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     </head>
-<body style="color: black; font-family: Alata; background-image: linear-gradient(to right, #cdaf52 0%, #ffffcc 95%);>
+<body style="color: black; font-family: Alata; background-color: #fffae6;">
     <div align="center">
-                <h1>Mhyk Live2D Viewer</h1>
+                <h1 style="background-image: linear-gradient(to right, #cdaf52 0%, #ffffcc 95%); padding-left: 10px;">Mhyk Live2D Viewer</h1>
     </div>
     <div align="center">
-        <div class="form-group" style="display: inline-block;background-color: #FCFCFB; color: black;">
-            <label><b>Select Character Outfit</b></label>
-            <select class="selectCharacter form-control" style="background-color: #FCFCFB; color: black;font-family: Alata, sans serif;"></select>
+        <div class="form-group" style="display: inline-block;background-color: #fffae6; color: black;">
+            <label>Select Character Outfit</label>
+            <select class="selectCharacter form-control" style="background-color: #FCFCFB; color: black; font-family: Alata, sans serif;"></select>
         </div>
     </div>
 
