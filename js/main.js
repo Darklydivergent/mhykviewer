@@ -54,7 +54,7 @@ class Viewer {
             }
 
             if (this.model) {
-                this.model.position = new PIXI.Point((width * 0.9), (height * 0.9));
+                this.model.position = new PIXI.Point((width * 1), (height * 1));
                 this.model.scale = new PIXI.Point((this.model.position.x * 0.1), (this.model.position.x * 0.09));
                 this.model.masks.resize(this.app.view.width, this.app.view.height);
             }
