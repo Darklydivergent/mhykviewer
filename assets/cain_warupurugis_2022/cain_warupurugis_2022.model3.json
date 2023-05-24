@@ -1,0 +1,100 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "cain_warupurugis_2022.moc3",
+    "Textures": [
+      "textures/texture_00.png"
+    ],
+    "Physics": "cain_warupurugis_2022.physics3.json",
+    "Motions": {
+      "": [
+        {
+          "File": "motions/exp_angry02.motion3.json"
+        },
+        {
+          "File": "motions/ac_hitei01.motion3.json"
+        },
+        {
+          "File": "motions/exp_sleep01.motion3.json"
+        },
+        {
+          "File": "motions/exp_cry01.motion3.json"
+        },
+        {
+          "File": "motions/ac_koutei01.motion3.json"
+        },
+        {
+          "File": "motions/exp_cry02.motion3.json"
+        },
+        {
+          "File": "motions/exp_trouble02.motion3.json"
+        },
+        {
+          "File": "motions/exp_normal01.motion3.json"
+        },
+        {
+          "File": "motions/ac_jushin01.motion3.json"
+        },
+        {
+          "File": "motions/exp_smile01.motion3.json"
+        },
+        {
+          "File": "motions/ac_mae02.motion3.json"
+        },
+        {
+          "File": "motions/exp_laugh01.motion3.json"
+        },
+        {
+          "File": "motions/ac_ushiro01.motion3.json"
+        },
+        {
+          "File": "motions/ac_relax01.motion3.json"
+        },
+        {
+          "File": "motions/exp_surprise01.motion3.json"
+        },
+        {
+          "File": "motions/ac_jushin02.motion3.json"
+        },
+        {
+          "File": "motions/ac_mae01.motion3.json"
+        },
+        {
+          "File": "motions/ac_mae03.motion3.json"
+        },
+        {
+          "File": "motions/idle_pose01.motion3.json"
+        },
+        {
+          "File": "motions/exp_angry01.motion3.json"
+        },
+        {
+          "File": "motions/ac_relax02.motion3.json"
+        },
+        {
+          "File": "motions/idle_basic.motion3.json"
+        },
+        {
+          "File": "motions/exp_trouble01.motion3.json"
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeROpen",
+        "ParamEyeLOpen"
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": [
+        "ParamMouthOpenY"
+      ]
+    }
+  ]
+}
