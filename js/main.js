@@ -86,16 +86,16 @@ class Viewer {
                 return;
             }
 
-            //if (this.isClick) {
-              //  if (this.isHit('TouchHead', event.offsetX, event.offsetY)) {
-               //     this.startAnimation("touch_head", "base");
-                //} else if (this.isHit('TouchSpecial', event.offsetX, event.offsetY)) {
-                 //   this.startAnimation("touch_special", "base");
-                //} else {
-                 //   const bodyMotions = ["touch_body", "main_1", "main_2", "main_3"];
-                  //  let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
-                   // this.startAnimation(currentMotion, "base");
-               // }
+            if (this.isClick) {
+                if (this.isHit('TouchHead', event.offsetX, event.offsetY)) {
+                    this.startAnimation("touch_head", "base");
+                } else if (this.isHit('TouchSpecial', event.offsetX, event.offsetY)) {
+                    this.startAnimation("touch_special", "base");
+                } else {
+                    const bodyMotions = ["touch_body", "main_1", "main_2", "main_3"];
+                    let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
+                   this.startAnimation(currentMotion, "base");
+                }
             }
 
             this.isClick = false;
@@ -247,19 +247,6 @@ class Viewer {
 }    
         }
     }
-
-    var xobj = new XMLHttpRequest();
-    xobj.open("GET", "https://api.github.com/repos/Darklydivergent/mhykviewer/commits?sha=gh-pages", true);
-    xobj.setRequestHeader("Authorization", "token c44bb04d2275b3c1849b49f02d8c1b473c5b6864");
-    //access token scope: <<no scope>>
-    //Grants read-only access to public information (includes public user profile info, public repository info, and gists)
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            cb(JSON.parse(xobj.response));
-          }
-    };
-    xobj.send(null); 
 }
 
 function onSelectBG(){
