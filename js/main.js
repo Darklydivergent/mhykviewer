@@ -85,18 +85,18 @@ class Viewer {
             if (!this.model) {
                 return;
             }
-
-            if (this.isClick) {
-                if (this.isHit('TouchHead', event.offsetX, event.offsetY)) {
-                    this.startAnimation("touch_head", "base");
-                } else if (this.isHit('TouchSpecial', event.offsetX, event.offsetY)) {
-                    this.startAnimation("touch_special", "base");
-                } else {
-                    const bodyMotions = ["touch_body", "main_1", "main_2", "main_3"];
-                    let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
-                   this.startAnimation(currentMotion, "base");
-                }
-            }
+//comment out until see if can add tap motions
+           // if (this.isClick) {
+             //   if (this.isHit('TouchHead', event.offsetX, event.offsetY)) {
+             //       this.startAnimation("touch_head", "base");
+              //  } else if (this.isHit('TouchSpecial', event.offsetX, event.offsetY)) {
+               //     this.startAnimation("touch_special", "base");
+               // } else {
+               //     const bodyMotions = ["touch_body", "main_1", "main_2", "main_3"];
+               //     let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
+               //    this.startAnimation(currentMotion, "base");
+               // }
+           // }
 
             this.isClick = false;
             this.model.inDrag = false;
@@ -244,10 +244,7 @@ class Viewer {
 
         return ((left <= tx) && (tx <= right) && (top <= ty) && (ty <= bottom));
     }
-}    
-        }
-    }
-}
+} 
 
 function onSelectBG(){
     console.log(window.pageXOffset + " : " + window.pageYOffset);
