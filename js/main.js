@@ -50,12 +50,12 @@ class Viewer {
 
             if (document.getElementById("darken") != null) {
                 document.getElementById("darken").top = window.pageYOffset + "px";
-                document.getElementById("selector").top = (window.pageYOffset + (window.innerHeight * 0.05)) + "px" ;
+                document.getElementById("selector").top = (window.pageYOffset + (window.innerHeight)) + "px" ;
             }
 
             if (this.model) {
                 this.model.position = new PIXI.Point((width * 0.5), (height * 0.5));
-                this.model.scale = new PIXI.Point((this.model.position.x * 0.06), (this.model.position.x * 0.06));
+                this.model.scale = new PIXI.Point((this.model.position.x * 0.08), (this.model.position.x * 0.08));
                 this.model.masks.resize(this.app.view.width, this.app.view.height);
             }
             var screen_height = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
