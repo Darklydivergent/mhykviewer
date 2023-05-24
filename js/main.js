@@ -54,8 +54,8 @@ class Viewer {
             }
 
             if (this.model) {
-                this.model.position = new PIXI.Point((width * 0.5), (height * 0.5));
-                this.model.scale = new PIXI.Point((this.model.position.x * 0.08), (this.model.position.x * 0.08));
+                this.model.position = new PIXI.Point((width * 0.7), (height * 0.7));
+                this.model.scale = new PIXI.Point((this.model.position.x * 0.1), (this.model.position.x * 0.08));
                 this.model.masks.resize(this.app.view.width, this.app.view.height);
             }
             var screen_height = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
