@@ -74,28 +74,20 @@
         }
         table.wikitable {
             margin: 1em 0;
-            background-color: #373743;
-            border-style: solid;
-            border-width: 1px;
-            border-color: #5c5d70;
+            background-color: #fffae6;
+           border-radius: 10px;
+            border: 2px solid #D9B166;                
             border-collapse: collapse;
-            color: #ffffff;
+            color: black;
             height: 100%;
             width: 100%;
         }
         table.wikitable td {
             border-style: solid;
             border-width: 1px;
-            border-color: #5c5d70;
+            border-color: #D9B166;
             border-collapse: collapse;
         }
-       .gradline-gold {
-            border: 0;
-            width: 100%;
-            height: 1px;
-            background-image: linear-gradient(to right, #cdaf52 0%, #ffffcc 95%);
-            margin: 0;
-       }
     </style>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -103,20 +95,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     </head>
-<body style="background-color: #D7F8FE; color: black; font-family: Alata;">
+<body style="color: black; font-family: Alata; background-image: linear-gradient(to right, #cdaf52 0%, #ffffcc 95%);>
     <div align="center">
                 <h1>Mhyk Live2D Viewer</h1>
-            </div>
-    <hr class="gradline-gold" style="height:2px;">
+    </div>
     <div align="center">
-        <div class="form-group" style="display: inline-block;">
+        <div class="form-group" style="display: inline-block;background-color: #FCFCFB; color: black;">
             <label><b>Select Character Outfit</b></label>
-            <select class="selectCharacter form-control" style="background-color: #24252d; color: #ffffff;"></select>
+            <select class="selectCharacter form-control" style="background-color: #FCFCFB; color: black;font-family: Alata, sans serif;"></select>
         </div>
     </div>
 
     <div align="center" style="margin-bottom: 15px;">
-        <div class="btnGenericText" onclick="onSelectBG()" style="font-size: 17px; height: 40px;"><b>Select Background</b></div>
+        <div class="btnGenericText" onclick="onSelectBG()" style="font-size: 15px; height: 30px;"><b>Select Background</b></div>
     </div>
 
     <div align="center" style="margin-bottom: 15px;">
