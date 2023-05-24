@@ -54,8 +54,8 @@ class Viewer {
             }
 
             if (this.model) {
-                this.model.position = new PIXI.Point((width * 0.5), (height * 0.5));
-                this.model.scale = new PIXI.Point((this.model.position.x * 1), (this.model.position.x * 1));
+                this.model.position = new PIXI.Point((width * 0.9), (height * 0.9));
+                this.model.scale = new PIXI.Point((this.model.position.x * 0.1), (this.model.position.x * 0.1));
                 this.model.masks.resize(this.app.view.width, this.app.view.height);
             }
             var screen_height = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
@@ -135,7 +135,7 @@ class Viewer {
         let deltaTime = 0.016 * delta;
 
         if (!this.animator.isPlaying) {
-            let m = this.motions.get("idle");
+            let m = this.motions.get("idle_basic");
             this.animator.getLayer("base").play(m);
         }
         this._animator.updateAndEvaluate(deltaTime);
