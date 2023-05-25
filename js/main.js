@@ -66,7 +66,7 @@ class Viewer {
         this.app.view.addEventListener('mousedown', (event) => {
             this.isClick = true;
         });
-      /*  this.app.view.addEventListener('mousemove', (event) => {
+        this.app.view.addEventListener('mousemove', (event) => {
             if (this.isClick) {
                 this.isClick = false;
                 if (this.model) {
@@ -96,7 +96,7 @@ class Viewer {
                //     let currentMotion = bodyMotions[Math.floor(Math.random()*bodyMotions.length)];
                //    this.startAnimation(currentMotion, "base");
                // }
-           // }*/
+           // }
 
             this.isClick = false;
             this.model.inDrag = false;
