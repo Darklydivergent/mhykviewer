@@ -26,8 +26,8 @@ class Viewer {
             this.l2d.load(name, this);
         });
 
-        var ht = window.innerHeight * 0.9;
-        var wt = (ht / 16.0) * 9.0;
+        var wt = window.innerWidth * 0.9;
+        var ht = (wt / 16.0) * 9.0;
 
         this.app = new PIXI.Application(wt, ht, { transparent: true });
         this.canvas.html(this.app.view);
@@ -43,7 +43,7 @@ class Viewer {
         window.onresize = (event) => {
             if (event === void 0) { event = null; }
             let height = window.innerHeight * 0.9;
-            let width = (height / 16.0) * 9.0;
+            let width = (height / 14.0) * 9.0;
             this.app.view.style.width = width + "px";
             this.app.view.style.height = height + "px";
             this.app.renderer.resize(width, height);
