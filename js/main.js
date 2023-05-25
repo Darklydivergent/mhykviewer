@@ -43,7 +43,7 @@ class Viewer {
         window.onresize = (event) => {
             if (event === void 0) { event = null; }
             let height = window.innerHeight * 0.9;
-            let width = (height / 10.0) * 9.0;
+            let width = (height / 16.0) * 9.0;
             this.app.view.style.width = width + "px";
             this.app.view.style.height = height + "px";
             this.app.renderer.resize(width, height);
