@@ -27,7 +27,7 @@ class Viewer {
         });
 
         var wt = window.innerWidth * 0.9;
-        var ht = (wt / 16.0) * 9.1;
+        var ht = (wt / 16.0) * 9.3;
 
         this.app = new PIXI.Application(wt, ht, { transparent: true });
         this.canvas.html(this.app.view);
@@ -251,7 +251,7 @@ function onSelectBG(){
     var div = document.createElement('div');
     div.className = "darken";
     div.id = "darken";
-    div.style.top = window.pageYOffset + "px";
+    div.style.top = window.scrollY + "px";
     div.addEventListener("click", function(e) {
             document.body.removeChild(document.getElementById("selector"));
             document.body.removeChild(document.getElementById("darken"));
@@ -262,16 +262,16 @@ function onSelectBG(){
     var selector = document.createElement('div');
     selector.id = "selector";
     selector.className = "selector";
-    selector.style.top = (window.pageYOffset + (window.innerHeight * 0.05)) + "px" ;
+    selector.style.top = (window.scrollY + (window.innerHeight * 0.05)) + "px" ;
     document.body.appendChild(selector);
     for (var i = 0; i < backgroundData.length; i++){
         var img = document.createElement('div');
         img.className = "thumbbutton";
-        img.style.backgroundImage = "url(../assets/bg/"+backgroundData[i]+")";
+        img.style.backgroundImage = "url(./assets/bg/"+backgroundData[i]+")";
         img.style.backgroundSize = "100%";
         img.id = backgroundData[i];
         img.addEventListener("click", function(e) {
-            document.getElementById("L2dCanvas").style.backgroundImage = "url(../assets/bg/"+this.id+")";
+            document.getElementById("L2dCanvas").style.backgroundImage = "url(./assets/bg/"+this.id+")";
             document.body.removeChild(document.getElementById("selector"));
             document.body.removeChild(document.getElementById("darken"));
             document.body.style.overflow = "auto";
