@@ -26,6 +26,19 @@ class Viewer {
             this.l2d.load(name, this);
         });
 
+        let stringAnimation = "<option>Select</option>";
+        for (let val in charData) {
+            stringAnimation+= '<option value="' + charData[val] + '">' + val + '</option>';
+        }
+        this.selectAnimation.html(stringAnimation);
+        this.selectAnimation.change((event) => {
+            if (event.target.selectedIndex == 0) {
+                return;
+            }
+            let name = event.target.value;
+            this.l2d.load(name, this);
+        });
+
         var wt = window.innerWidth * 0.9;
         var ht = (wt / 16.0) * 9.3;
 
