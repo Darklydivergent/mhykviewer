@@ -39,8 +39,8 @@ class Viewer {
             this.l2d.load(name, this);
         });
 
-        var wt = window.innerWidth * 0.9;
-        var ht = (wt / 16.0) * 9.3;
+        var wt = window.innerWidth;
+        var ht = (wt / 16.0) * 10;
 
         this.app = new PIXI.Application(wt, ht, { transparent: true });
         this.canvas.html(this.app.view);
@@ -62,8 +62,8 @@ class Viewer {
             this.app.renderer.resize(width, height);
 
             if (document.getElementById("darken") != null) {
-                document.getElementById("darken").top = window.scrollY + "px";
-                document.getElementById("selector").top = (window.scrollY + (window.innerHeight)) + "px" ;
+                document.getElementById("darken").top = window.offsetY + "px";
+                document.getElementById("selector").top = (window.offsetY + (window.innerHeight)) + "px" ;
             }
 
             if (this.model) {
@@ -260,11 +260,11 @@ class Viewer {
 } 
 
 function onSelectBG(){
-    console.log(window.scrollX + " : " + window.scrollY);
+    console.log(window.offsetX + " : " + window.offsetY);
     var div = document.createElement('div');
     div.className = "darken";
     div.id = "darken";
-    div.style.top = window.scrollY + "px";
+    div.style.top = window.offsetY + "px";
     div.addEventListener("click", function(e) {
             document.body.removeChild(document.getElementById("selector"));
             document.body.removeChild(document.getElementById("darken"));
@@ -275,7 +275,7 @@ function onSelectBG(){
     var selector = document.createElement('div');
     selector.id = "selector";
     selector.className = "selector";
-    selector.style.top = (window.scrollY + (window.innerHeight * 0.05)) + "px" ;
+    selector.style.top = (window.offsetY + (window.innerHeight * 0.05)) + "px" ;
     document.body.appendChild(selector);
     for (var i = 0; i < backgroundData.length; i++){
         var img = document.createElement('div');
