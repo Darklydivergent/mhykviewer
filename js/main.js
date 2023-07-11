@@ -27,7 +27,7 @@ class Viewer {
         });
 
         var wt = window.innerWidth * 0.9;
-        var ht = (wt / 16.0) * 9.0;
+        var ht = (wt / 16.0) * 9.1;
 
         this.app = new PIXI.Application(wt, ht, { transparent: true });
         this.canvas.html(this.app.view);
@@ -49,8 +49,8 @@ class Viewer {
             this.app.renderer.resize(width, height);
 
             if (document.getElementById("darken") != null) {
-                document.getElementById("darken").top = window.pageYOffset + "px";
-                document.getElementById("selector").top = (window.pageYOffset + (window.innerHeight)) + "px" ;
+                document.getElementById("darken").top = window.scrollY + "px";
+                document.getElementById("selector").top = (window.scrollY + (window.innerHeight)) + "px" ;
             }
 
             if (this.model) {
@@ -247,7 +247,7 @@ class Viewer {
 } 
 
 function onSelectBG(){
-    console.log(window.pageXOffset + " : " + window.pageYOffset);
+    console.log(window.scrollX + " : " + window.scrollY);
     var div = document.createElement('div');
     div.className = "darken";
     div.id = "darken";
