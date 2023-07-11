@@ -40,7 +40,7 @@ class Viewer {
         });
 
         var wt = window.innerWidth;
-        var ht = (wt / 16.0) * 10;
+        var ht = window.innerHeight;
 
         this.app = new PIXI.Application(wt, ht, { transparent: true });
         this.canvas.html(this.app.view);
