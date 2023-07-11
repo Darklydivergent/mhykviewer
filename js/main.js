@@ -88,8 +88,8 @@ class Viewer {
             }
 
             if (this.model) {
-                let mouse_x = this.model.position.x - event.scrollX;
-                let mouse_y = this.model.position.y - event.scrollY;
+                let mouse_x = this.model.position.x - event.offsetX;
+                let mouse_y = this.model.position.y - event.offsetY;
                 this.model.pointerX = -mouse_x / this.app.view.height;
                 this.model.pointerY = -mouse_y / this.app.view.width;
             }
