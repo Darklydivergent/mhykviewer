@@ -1,5 +1,5 @@
 var fs = require('fs');
-var files = fs.readdirSync('../assets/bg/');
+var files = fs.readdirSync('./assets/bg/');
 
 var text = "var backgroundData = [\n"
 
