@@ -62,8 +62,8 @@ class Viewer {
             this.app.renderer.resize(width, height);
 
             if (document.getElementById("darken") != null) {
-                document.getElementById("darken").top = window.offsetY + "px";
-                document.getElementById("selector").top = (window.offsetY + (window.innerHeight)) + "px" ;
+                document.getElementById("darken").top = window.scrollY + "px";
+                document.getElementById("selector").top = (window.scrollY + (window.innerHeight)) + "px" ;
             }
 
             if (this.model) {
@@ -88,8 +88,8 @@ class Viewer {
             }
 
             if (this.model) {
-                let mouse_x = this.model.position.x - event.offsetX;
-                let mouse_y = this.model.position.y - event.offsetY;
+                let mouse_x = this.model.position.x - event.scrollX;
+                let mouse_y = this.model.position.y - event.scrollY;
                 this.model.pointerX = -mouse_x / this.app.view.height;
                 this.model.pointerY = -mouse_y / this.app.view.width;
             }
@@ -260,11 +260,11 @@ class Viewer {
 } 
 
 function onSelectBG(){
-    console.log(window.offsetX + " : " + window.offsetY);
+    console.log(window.scrollX + " : " + window.scrollY);
     var div = document.createElement('div');
     div.className = "darken";
     div.id = "darken";
-    div.style.top = window.offsetY + "px";
+    div.style.top = window.scrollY + "px";
     div.addEventListener("click", function(e) {
             document.body.removeChild(document.getElementById("selector"));
             document.body.removeChild(document.getElementById("darken"));
@@ -275,7 +275,7 @@ function onSelectBG(){
     var selector = document.createElement('div');
     selector.id = "selector";
     selector.className = "selector";
-    selector.style.top = (window.offsetY + (window.innerHeight * 0.05)) + "px" ;
+    selector.style.top = (window.scrollY + (window.innerHeight * 0.05)) + "px" ;
     document.body.appendChild(selector);
     for (var i = 0; i < backgroundData.length; i++){
         var img = document.createElement('div');
