@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "pixi-live2d": "^1.2.1",
+    "pixi-viewport": "^5.0.1",
+    "pixi.js": "^7.2.4",
+    "resource-loader": "^4.0.0-rc4"
+  }
+}
