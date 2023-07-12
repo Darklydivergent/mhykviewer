@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Mhyk Live2D Viewer</title>
     
+    
 
     <style>
         .selectbutton {
@@ -55,8 +56,8 @@
         }
         .thumbbutton {
             cursor: pointer;
-            height: 101px;
-            width: 180px;
+            height: 180px;
+            width: 101px;
             display: inline-block;
             margin-top: 20px;
             margin-left: 20px;
@@ -96,47 +97,47 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+      <script src="js/pixi_viewport.js"></script>
     </head>
+    
 <body style="color: black; font-family: Alata; background-color: #fffae6;">
     <div align="center">
                 <h1 style="background-image: linear-gradient(to right, #cdaf52 0%, #ffffcc 95%); padding-left: 10px;">Mhyk Live2D Viewer</h1>
     </div>
+<div style="display:flex; flex-direction:row;">
+    <div style="display: flex; flex-direction: column; height: 100%; width: 40%;">
     <div align="left">
-        <div class="form-group" style="display: inline-block;background-color: #fffae6; color: black;">
+        <div class="form-group" style="display: inline-block; background-color: #fffae6; color: black;">
             <label>Select Character Outfit</label>
             <select class="selectCharacter form-control" style="background-color: #FCFCFB; color: black; font-family: Alata, sans serif;"></select>
         </div>
     </div>
-
-
+        
     <div align="left">
         <div class="form-group" style="display: inline-block;background-color: #fffae6; color: black;">
         <label>Select Animation</label>
-        <select class="selectAnimation form-control"  style="background-color: #FCFCFB; color: black; font-family: Alata, sans serif">
-        </select>
+        <select class="selectAnimation form-control"  style="background-color: #FCFCFB; color: black; font-family: Alata, sans serif"></select>
     </div>
     </div>
-
-    <div align="center" style="margin-bottom: 15px;">
+ 
+    <div align="left" style="margin-bottom: 15px;">
         <div class="selectbutton" onclick="onSelectBG()" style="font-size: 15px; height: 30px;"><b>Select Background</b></div>
     </div>
-
+</div>
     <!-- Canvas -->
-    <div align="center">
-        <div class="Canvas" style="display: inline-block; background-image: url(./assets/bg/sky_fullmoon_bg.png); background-size: 100%; background-repeat: no-repeat;" id="L2dCanvas"></div>
+    <div style="display:flex; height: 100%; width: 60%;">
+        <div class="Canvas" style="display: inline-block; background-image: url(./assets/bg/sky_fullmoon_bg.png); background-size: 100%; background-repeat: no-repeat; border: 1px solid;" id="L2dCanvas"></div>
     </div>
+</div>
 
-    <footer id="false" style="height:70px;width:100%;margin-top: 15px;">
-    </footer>
-
-    <footer id="footer">
+    <footer>
         footer here
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+  <script src="js/pixi_viewport.js"></script>
     <!-- Promise-polyfill -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
 
